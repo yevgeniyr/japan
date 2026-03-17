@@ -2,28 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Tokyo Map Hotspots</title>
+  <title>Tokyo 4-Day Map</title>
   <style>
-    body { margin:0; background:#000; display:flex; justify-content:center; align-items:center; min-height:100vh; }
-    .map-container { position:relative; display:inline-block; }
-    img { max-width:100%; max-height:90vh; }
-    .hotspot {
-      position:absolute; width:20px; height:20px; background:red; border-radius:50%;
-      opacity:0.7; cursor:pointer; transform:translate(-50%,-50%);
-    }
+    body { margin:0; background:#000; color:#fff; font-family:Arial; min-height:100vh; display:flex; flex-direction:column; align-items:center; }
+    .tabs { display:flex; justify-content:center; margin:20px 0; }
+    .tab { padding:10px 20px; background:#333; margin:0 5px; cursor:pointer; border-radius:5px; }
+    .tab.active { background:#555; }
+    .tab-content { display:none; position:relative; }
+    .tab-content.active { display:block; }
+    img { max-width:90%; max-height:70vh; }
+    .hotspot { position:absolute; width:20px; height:20px; background:red; border-radius:50%; opacity:0.7; cursor:pointer; transform:translate(-50%,-50%); }
     .hotspot:hover { opacity:1; transform:translate(-50%,-50%) scale(1.3); }
   </style>
 </head>
 <body>
-  <div class="map-container">
-    <img src="tokyo-tourist-map-city-overview.jpg" alt="Tokyo Overview Map">
-    
-    <!-- Example hotspots - adjust coordinates % based on actual map -->
-    <div class="hotspot" style="left:25%; top:40%;" onclick="alert('Shibuya Area')"></div>
-    <div class="hotspot" style="left:45%; top:25%;" onclick="alert('Shinjuku')"></div>
-    <div class="hotspot" style="left:60%; top:35%;" onclick="alert('Akihabara')"></div>
-    <div class="hotspot" style="left:30%; top:60%;" onclick="alert('Ginza')"></div>
-    <div class="hotspot" style="left:50%; top:70%;" onclick="alert('Tokyo Station')"></div>
+  <h2>Tokyo 4-Day Interactive Map</h2>
+  <div class="tabs">
+    <div class="tab active" onclick="showTab(1)">Day 1</div>
+    <div class="tab" onclick="showTab(2)">Day 2</div>
+    <div class="tab" onclick="showTab(3)">Day 3</div>
+    <div class="tab" onclick="showTab(4)">Day 4</div>
   </div>
+
+  <div id="tab1" class="tab-content active">
+    <div style="position:relative; display:inline-block;">
+      <img src="tokyo-map.jpg" alt="Tokyo Map">
+      <!-- Day 1: West/Modern (e.g. Shibuya, Harajuku, Shinjuku) -->
+      <div class="hotspot" style="left:35%; top:45%;" onclick="alert('Shibuya Crossing')"></div>
+      <div class="hotspot" style="left:30%; top:35%;" onclick="alert('Harajuku / Meiji Shrine')"></div>
+      <div class="hotspot" style="left:45%; top:25%;" onclick="alert('Shinjuku')"></div>
+    </div>
+  </div>
+
+  <div id="tab2" class="tab-content">
+    <div style="position:relative; display:inline-block;">
+      <img src="tokyo-map.jpg" alt="Tokyo Map">
+      <!-- Day 2: East/Traditional (e.g. Asakusa, Ueno) -->
+      <div class="hotspot" style="left:55%; top:40%;" onclick="alert('Asakusa / Senso-ji')"></div>
+      <div class="hotspot" style="left:60%; top:50%;" onclick="alert('Ueno Park')"></div>
+      <div class="hotspot" style="left:65%; top:45%;" onclick="alert('Akihabara')"></div>
+    </div>
+  </div>
+
+  <div id="tab3" class="tab-content">
+    <div style="position:relative; display:inline-block;">
+      <img src="tokyo-map.jpg" alt="Tokyo Map">
+      <!-- Day 3: Central (e.g. Ginza, Tokyo Station, Imperial Palace) -->
+      <div class="hotspot" style="left:40%; top:55%;" onclick="alert('Ginza')"></div>
+      <div class="hotspot" style="left:50%; top:60%;" onclick="alert('Tokyo Station')"></div>
+      <div class="hotspot" style="left:45%; top:65%;" onclick="alert('Imperial Palace')"></div>
+    </div>
+  </div>
+
+  <div id="tab4" class="tab-content">
+    <div style="position:relative; display:inline-block;">
+      <img src="tokyo-map.jpg" alt="Tokyo Map">
+      <!-- Day 4: Odaiba / Bay or Roppongi / TeamLab -->
+      <div class="hotspot" style="left:25%; top:75%;" onclick="alert('Odaiba / Rainbow Bridge')"></div>
+      <div class="hotspot" style="left:35%; top:70%;" onclick="alert('TeamLab Borderless')"></div>
+      <div class="hotspot" style="left:55%; top:30%;" onclick="alert('Roppongi')"></div>
+    </div>
+  </div>
+
+  <script>
+    function showTab(n) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+      document.getElementById('tab'+n).classList.add('active');
+      document.querySelectorAll('.tab')[n-1].classList.add('active');
+    }
+  </script>
 </body>
 </html>
