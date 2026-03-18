@@ -32,12 +32,14 @@
       <div class="hotspot" style="left:30%; top:35%;" onclick="alert('Harajuku / Meiji Shrine')"></div>
       <div class="hotspot" style="left:45%; top:25%;" onclick="alert('Shinjuku')"></div>
     </div>
-<!-- Replace the hotel div in #tab1 with this -->
+<!-- Replace the hotel div in #tab1 with this (map stays centered, hotel on left below) -->
 
-<div style="margin-top:15px; display:flex; align-items:center; justify-content:flex-start; gap:20px;">
-  <img src="tokyo-hotel.jpg" alt="stayme THE HOTEL 上野駅前" style="max-width:200px; height:auto;">
-  <p style="margin:0; font-size:14px;">stayme THE HOTEL 上野駅前<br>7 Chome-10-13 Ueno, Taito City, Tokyo 110-0005, Japan<br>+81 3-6778-7790</p>
-</div>  
+<div style="margin-top:15px; display:flex; align-items:flex-start; justify-content:center; gap:20px; flex-wrap:wrap;">
+  <div style="flex: 0 0 auto;">
+    <img src="tokyo-hotel.jpg" alt="stayme THE HOTEL 上野駅前" style="max-width:200px; height:auto;">
+  </div>
+  <p style="margin:0; font-size:14px; max-width:300px;">stayme THE HOTEL 上野駅前<br>7 Chome-10-13 Ueno, Taito City, Tokyo 110-0005, Japan<br>+81 3-6778-7790</p>
+</div>
   </div>
 
   <div id="tab2" class="tab-content">
