@@ -24,24 +24,25 @@
     <div class="tab" onclick="showTab(4)">Day 4</div>
   </div>
 
-  <div id="tab1" class="tab-content active">
-    <div style="position:relative; display:inline-block;">
-      <img src="tokyo-map.jpg" alt="Tokyo Map">
-      <!-- Day 1: West/Modern (e.g. Shibuya, Harajuku, Shinjuku) -->
-      <div class="hotspot" style="left:35%; top:45%;" onclick="alert('Shibuya Crossing')"></div>
-      <div class="hotspot" style="left:30%; top:35%;" onclick="alert('Harajuku / Meiji Shrine')"></div>
-      <div class="hotspot" style="left:45%; top:25%;" onclick="alert('Shinjuku')"></div>
+  <!-- Replace entire #tab1 with this (map stays centered, hotel floats left below) -->
+
+<div id="tab1" class="tab-content active">
+  <div style="position:relative; display:inline-block;">
+    <img src="tokyo-map.jpg" alt="Tokyo Map">
+    <div class="hotspot" style="left:35%; top:45%;" onclick="alert('Shibuya Crossing')"></div>
+    <div class="hotspot" style="left:30%; top:35%;" onclick="alert('Harajuku / Meiji Shrine')"></div>
+    <div class="hotspot" style="left:45%; top:25%;" onclick="alert('Shinjuku')"></div>
+    <div class="hotspot" style="left:58%; top:42%;" onclick="alert('stayme THE HOTEL 上野駅前\n7 Chome-10-13 Ueno, Taito City, Tokyo 110-0005, Japan\n+81 3-6778-7790')"></div>
+  </div>
+
+  <div style="margin:15px auto; max-width:90%; text-align:left;">
+    <div style="display:flex; align-items:center; gap:15px; flex-wrap:wrap;">
+      <img src="tokyo-hotel.jpg" alt="stayme THE HOTEL 上野駅前" style="max-width:180px; height:auto;">
+      <p style="margin:0; font-size:14px;">stayme THE HOTEL 上野駅前<br>7 Chome-10-13 Ueno, Taito City, Tokyo 110-0005, Japan<br>+81 3-6778-7790</p>
     </div>
-<!-- Replace the hotel div in #tab1 with this (map stays centered, hotel on left below) -->
-
-<div style="margin-top:15px; display:flex; align-items:flex-start; justify-content:center; gap:20px; flex-wrap:wrap;">
-  <div style="flex: 0 0 auto;">
-    <img src="tokyo-hotel.jpg" alt="stayme THE HOTEL 上野駅前" style="max-width:200px; height:auto;">
   </div>
-  <p style="margin:0; font-size:14px; max-width:300px;">stayme THE HOTEL 上野駅前<br>7 Chome-10-13 Ueno, Taito City, Tokyo 110-0005, Japan<br>+81 3-6778-7790</p>
 </div>
-  </div>
-
+  
   <div id="tab2" class="tab-content">
     <div style="position:relative; display:inline-block;">
       <img src="tokyo-map.jpg" alt="Tokyo Map">
